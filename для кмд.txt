@@ -1,0 +1,1164 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+1)	Даны вещественные числа  и.Определить, принадлежит ли точка с координатами() заштрихованной области.
+
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	setlocale(LC_ALL, "RU");
+	float x, y;
+	cout << "Введите координату x = ";
+	cin >> x;
+	cout << "Введите координату y = ";
+	cin >> y;
+
+	if (x >= -1 && x <= 3 && y >= -2 && y <= 4)
+	{
+		cout << "принадлежит";
+	}
+	else {
+		cout << "Не принадлежит";
+	}
+	return 0;
+}
+
+2)	Даны вещественные числа  и.Определить, принадлежит ли точка с координатами() заштрихованной области.
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	float x, y;
+	setlocale(LC_ALL, "RU");
+	cout << "Введите координату x = ";
+	cin >> x;
+	cout << "Введите координату y = ";
+	cin >> y;
+
+	if (y >= -3 && y <= 2.5 * x + 2 && y <= -2.5 * x + 2)
+	{
+		cout << "принадлежит";
+	}
+
+	else
+	{
+		cout << "не принадлежит";
+	}
+	return 0;
+}
+
+3)	Написать программу решения квадратного уравнения.Исходные данные : вещественные числа  и  - коэффициенты квадратного уравнения.
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+	setlocale(LC_ALL, "RU");
+	double a, b, c, x;
+	cout << "введите a: ";
+	cin >> a;
+	cout << "введите b: ";
+	cin >> b;
+	cout << "введите c: ";
+	cin >> c;
+	if ((b * b - 4 * a * c) >= 0)
+	{
+		x = (-1 * b + sqrt(b * b - 4 * a * c)) / (2 * a);
+		cout << "1 корень " << x << endl;
+		x = (-1 * b - sqrt(b * b - 4 * a * c)) / (2 * a);
+		cout << "2 корень" << x << endl;
+	}
+	else
+	{
+		cout << "D < 0, Корней нет " << endl;
+	}
+
+	return 0;
+}
+
+4)	Вывести на печать название дня недели, соответствующее заданному числу, при условии, что в месяце 31 день и 1 - е число - понедельник.
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+	setlocale(LC_ALL, "RU");
+	int D;
+	cout << "день = "; cin >> D;
+	if (D <= 31) {
+		switch (D = D % 7)
+		{
+		case 0: cout << "воскресенье"; break;
+		case 1: cout << "понедельник"; break;
+		case 2: cout << "вторник"; break;
+		case 3: cout << "среда"; break;
+		case 4: cout << "четверг"; break;
+		case 5: cout << "пятница"; break;
+		case 6: cout << "суббота"; break;
+		};
+		cout << endl;
+		system("PAUSE");
+		return 0;
+	}
+}
+
+5)	Дано вещественное число a.Для функции, график которой приведён ниже, вычислить
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	double a;
+	cout << "a = ";
+	cin >> a;
+	double fa;
+	if (a < -3)
+		fa = 3;
+	else if (a >= -3 && a < 2)
+		fa = 4;
+	else if (a >= 2)
+	{
+		fa = 1;
+	}
+	else
+		fa = a;
+	cout << "f(" << a << ") = " << fa << endl;
+	system("pause");
+	return 0;
+}
+6)	Дано вещественное число a.Для функции, график которой приведён ниже, вычислить
+
+#include <iostream> 
+#include <cmath> 
+using namespace std;
+
+int main()
+{
+	setlocale(LC_ALL, "RU");
+	double x = 5, y;
+	cout << "Введите x= ";
+	cin >> x;
+	if (x <= 1)
+	{
+		y = pow(0.5, x);
+	}
+	else
+	{
+		y = 0.75 * x - 1.25;
+	}
+	cout << y << endl;
+	return 0;
+}
+
+7)	Определить, пересекаются ли линии  и.Если пересекаются, найти точку пересечения
+
+8)	Задан круг с центром в точке, радиусом  и точка.Определить, находится ли точка внутри круга.
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	setlocale(LC_ALL, "Rus");
+	cout << "Введите центр круга(x,y) ";
+	double x0, y0;
+	cin >> x0 >> y0;
+	cout << "Введите радиус круга";
+	double R0;
+	cin >> R0;
+	cout << "Введите точку координаты";
+	double x1, y1;
+	cin >> x1 >> y1;
+	double d = sqrt((x0 - x1) * (x0 - x1) + (y0 - y1) * (y0 - y1));
+	if (d < R0)
+		cout << "Внутри круга\n";
+	else if (d > R0)
+		cout << "Снаружи круга\n";
+	else
+		cout << "В круге\n";
+	system("pause");
+	return 0;
+}
+
+9)	Задана окружность с центром в точке  и радиусом.Определить, пересекается ли заданная окружность с осью абсцисс, если пересекается - найти точки пересечения.
+#include<iostream>
+using namespace std;
+
+int main()
+{
+	setlocale(LC_ALL, "Ru");
+	double x0, y0, r, y, x, y1, x1, x2, x3, y2, y3;
+	cout << "x0=";
+	cin >> x0;
+	cout << "y0=";
+	cin >> y0;
+	cout << "r=";
+	cin >> r;
+	;
+	if ((sqrt(pow(r, 2) - pow(y0, 2))) > 0)
+	{
+
+		x2 = x0 + sqrt(pow(r, 2) - pow(y0, 2));
+		x3 = x0 - sqrt(pow(r, 2) - pow(y0, 2));
+		cout << "x=" << x2 << " " << "y=0" << "\n";
+		cout << "x=" << x3 << " " << "y=0" << "\n";
+
+	}
+	else
+		cout << "net peresech s x";
+
+	system("pause");
+	return 0;
+}
+
+
+10)	Определить, пересекает ли линия ось абсцисс.Если пересекает, найти точку пересечения.
+
+11)	Вывести на экран таблицу значений функции  в диапазоне от  до  с шагом.Значения  и  вводятся с клавиатуры.
+
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main()
+{
+	setlocale(LC_ALL, "RU");
+	double a, b, h, i, x, y;
+
+	cout << "Введите а: ";
+	cin >> a;
+	cout << "Введите b: ";
+	cin >> b;
+	cout << "Введите h: ";
+	cin >> h;
+
+	cout << setw(15) << "X" << setw(15) << "Y" << endl;
+
+	for (x = a; x <= b; x = x + h)
+	{
+		y = 5.4 * pow(x, 3) - 2.8 * pow(x, 2) - x + 1.6;
+		cout << setw(15) << x << setw(15) << y << endl;
+	}
+}
+
+12)	Вывести на экран таблицу значений функции y  в диапазоне от - 2 до 2 с шагом .
+
+#include<iostream>
+#include<cmath>
+
+using namespace std;
+
+int main()
+{
+	float x, endx, y, delta;
+	x = -2;
+	endx = 2;
+	delta = 0.25;
+
+	while (x <= endx)
+	{
+		y = -1.3 * pow(x, 2) - (exp(x) / 4);
+		cout << "x: " << x << " y: " << y << endl;
+		x += delta;
+		getchar();
+	}
+	return 0;
+}
+
+13)	Задано целое положительное число.Определить значение выражения :
+
+#include<iostream>
+#include<cmath>
+
+using namespace std;
+
+
+int main()
+{
+	setlocale(LC_ALL, "RU");
+	double i, n, s = 0, fact = 1, p = 1;
+
+	cout << "Введите n: ";
+	cin >> n;
+
+	for (i = 1; i <= n; i++)
+	{
+		fact = fact * i;
+	}
+	cout << "факториал: " << fact << endl;
+
+	for (i = 1; i <= n; i++)
+	{
+		s = s + i;
+	}
+	cout << "сумма: " << s << endl;
+
+	p = fact / s;
+
+	cout << "Результат: " << p << endl;
+}
+
+14)	Вычислить количество натуральных двузначных чётных чисел, не делящихся на 10.
+
+#include<iostream>
+
+
+using namespace std;
+
+
+int main()
+{
+	setlocale(LC_ALL, "RU");
+	double p, count = 0;
+	int i;
+	for (i = 10; i < 100; i++)
+	{
+		if (i % 10 != 0 && i % 2 == 0)
+		{
+			cout << i << endl;
+			count++;
+		}
+	}
+	cout << "кол-во четных двузначных, не делящихся на 10: " << count;
+}
+15)	Определить значение выражения : .
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+	double i, s = 0, fact = 1, p = 1;
+	for (i = 0; i <= 5; i++)
+	{
+		s = s + pow(3, i);
+	}
+	cout << "summ: " << s << endl;
+	for (i = 1; i <= 5; i++)
+	{
+		fact = fact * i;
+	}
+	cout << "fact: " << fact << endl;
+	p = s / fact;
+	cout << "Рез: " << p << endl;
+}
+16)	Дано целое положительное число.Вычислить произведение натуральных чисел кратных трём и не превышающих число  .
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	setlocale(LC_ALL, "RU");
+	int N, p = 1;
+	cout << "Введите N = ";
+	cin >> N;
+	for (int i = 1; i <= N; i++)
+	{
+		if (i % 3 == 0)
+		{
+			cout << i << endl;
+			p = p * i;
+		}
+	}
+	cout << p;
+}
+
+17)	Вводится последовательность ненулевых чисел, 0 - конец последовательности.Определить сумму положительных элементов последовательности.
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	int x, s = 0;
+	cin >> x;
+	while (x != 0) {
+		if (x > 0) { s += x; }
+		cin >> x;
+	}
+	cout << s;
+}
+18)	 Вводится последовательность ненулевых чисел, 0 - конец последовательности.Определить наибольшее число в последовательности.
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	setlocale(LC_ALL, "RU");
+	int x = -9999999, max = -9999999;
+	while (x != 0)
+	{
+		cout << "Введите число: ";
+		if (x > max)
+		{
+			max = x;
+		}
+		cin >> x;
+	}
+	cout << "Максимальное число = " << max;
+	return 0;
+}
+
+19)	Вводится последовательность произвольных чисел, 0 - конец последовательности.Определить отношение минимального и максимального элементов друг к другу.
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	setlocale(LC_ALL, "RU");
+	double result, x = 1, min = 9999999, max = -9999999;
+	while (x != 0)
+	{
+		cout << "Введите число: ";
+		if (x > max)
+		{
+			max = x;
+		}
+		if (x < min)
+		{
+			min = x;
+		}
+		cin >> x;
+	}
+	result = min / max;
+	cout << "Минимальное число = " << min << endl << "Максимальное число = " << max << endl;
+	cout << "Отношение " << min << " к " << max << " = " << result;
+	return 0;
+}
+
+20)	Вводится последовательность из  целых чисел.Определить количество одинаковых рядом стоящих чисел.
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	setlocale(LC_ALL, "ru");
+	int i, a[100], n, s = 0;
+	cout << "Введите колличество чисел в последовательности : ";
+	cin >> n;
+	for (i = 0; i < n; i++) {
+		cin >> a[i];
+	}
+	for (i = 0; i < (n - 1); i++) {
+		if (a[i] == a[i + 1] || a[i] == a[i - 1])
+			s++;
+	}
+	cout << "колличество одинаковых рядом стоящих числе = " << s;
+	return 0;
+}
+3 балла:
+21)	В одномерном массиве А(10) вычислить произведение элементов расположенных после минимального.
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	setlocale(LC_ALL, "ru");
+	int A[10];
+	for (int i = 0; i < 10; i++)
+	{
+		cin >> A[i];
+	}
+	int min = 9999999;
+	int location;
+	for (int i = 0; i < 10; i++)
+	{
+		if (A[i] < min)
+		{
+			min = A[i];
+			location = i;
+		}
+	}
+	int summ = 1;
+	for (int i = location + 1; i < 10; i++)
+	{
+		summ = summ * A[i];
+	}
+	cout << "произведение равно = " << summ;
+}
+
+
+22)	В одномерном массиве А(10) выполнить преобразования таким образом, чтобы в начале располагались все положительные элементы, затем все отрицательные. (Элементы, равные нулю, считать положительными).
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	setlocale(LC_ALL, "ru");
+	int A[10] = {};
+	cout << "введите массив :" << endl;
+	for (int i = 0; i < 10; i++) {
+		cin >> A[i];
+	}
+	for (int i = 0; i < 10; i++) {
+		for (int j = 10 - 1; j > i; j--) {
+			if ((!(A[j - 1] >= 0)) && (A[j] >= 0)) {
+				swap(A[j - 1], A[j]);
+			}
+		}
+	}
+	cout << "результат:" << endl;
+	for (int i = 0; i < 10; i++) {
+		cout << A[i] << " ";
+	}
+}
+23)	В одномерном массиве А(10) вычислить среднее арифметическое элементов, расположенных до минимального элемента.
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	int min = 10000000, sum = 0, k = 0;
+	int A[10] = {};
+	cout << "Введите массив: " << endl;
+	for (int i = 0; i < 10; i++) {
+		cin >> A[i];
+	}
+	for (int i = 0; i < 10; i++) {
+		if (A[i] < min) {
+			min = A[i];
+		}
+	}
+	for (int i = 0; i < 10; i++) {
+		if (A[i] == min) {
+			k = i;
+			break;
+		}
+		sum += A[i];
+	}
+	cout << "Среднее арифметическое равно:" << endl;
+	cout << (float)sum / k;
+}
+
+
+24)	В одномерном массиве А(10) вычислить сумму элементов массива, отличающихся от максимального на 1.
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	setlocale(LC_ALL, "ru");
+	int max = -1000000, sum = 0;
+	int A[10] = {};
+	cout << "Введите значение массива:" << endl;
+	for (int i = 0; i < 10; i++)
+	{
+		cin >> A[i];
+	}
+	for (int i = 0; i < 10; i++)
+	{
+		if (A[i] > max)
+		{
+			max = A[i];
+		}
+	}
+	for (int i = 0; i < 10; i++) {
+		if (A[i] + 1 == max)
+		{
+			sum += A[i];
+		}
+	}
+	cout << "Сумма: " << endl;
+	cout << sum;
+}
+
+
+
+25)	В одномерном массиве А(10) вычислить среднее арифметическое элементов, расположенных между минимальным и максимальным.
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	setlocale(LC_ALL, "RU");
+	int A[10];
+	int max = 0, min = 0;
+	cout << "введите значения массива :" << endl;
+	for (int i = 0; i < 10; i++)
+	{
+		cin >> A[i];
+	}
+	for (int i = 0; i < 10; i++) {
+		if (A[i] > A[max])
+		{
+			max = i;
+		}
+		if (A[i] < A[min])
+		{
+			min = i;
+		}
+	}
+	double s = 0;
+	if (min > max) {
+		swap(min, max); //поменять значения
+	}
+	for (int i = min + 1; i < max; i++) {
+		s += A[i];
+	}
+	if (s > 0) {
+		cout << s / (max - min - 1);
+	}
+	else cout << "'элементов нет";
+}
+4 балла:
+
+26)	Дана матрица A(10, 10).Построить вектор В из элементов побочной диагонали.В новом векторе  поменять местами минимальный и максимальный элементы.
+1 2 3 A[0][2]
+4 5 6 A[1][1] i + j == 2
+7 8 9 A[2][0]
+A[i][9 - i]
+
+#include <iostream>
+#include <iomanip>
+#include <ctime>
+#include <time.h>
+
+
+using namespace std;
+
+int main() {
+	srand(time(nullptr));
+	setlocale(LC_ALL, "ru");
+	int A[10][10]; int B[10];
+	for (int i = 0; i < 10; i++)
+	{
+		for (int j = 0; j < 10; j++)
+		{
+			A[i][j] = rand() % 100;
+			cout << setw(12) << A[i][j];
+			if (i + j == 9)
+			{
+				B[i] = A[i][j];
+			}
+		}
+	}
+	cout << endl << endl;
+	for (int i = 0; i < 10; i++)
+	{
+		B[i] = A[i][9 - i];
+		cout << B[i] << " ";
+	}
+
+	int max = -999999, min = 99999999, maxpos, minpos;
+	for (int i = 0; i < 10; i++)
+	{
+		if (B[i] > max)
+		{
+			max = B[i];
+			maxpos = i;
+		}
+		if (B[i] < min)
+		{
+			min = B[i];
+			minpos = i;
+		}
+	}
+	swap(B[minpos], B[maxpos]);
+	cout << endl << "Изменённая" << endl << B[minpos] << endl;
+	for (int i = 0; i < 10; i++)
+	{
+		cout << B[i] << " ";
+	}
+	return 0;
+}
+
+
+
+
+27)	Дана матрица А(4, 4).Если первый элемент строки отрицательный, то все элементы данной строки переписать в обратном порядке.Построить вектор В из элементов первого столбца матрицы.
+
+#include <iostream>
+#include <iomanip>
+#include <time.h>
+
+
+using namespace std;
+
+int main()
+{
+	setlocale(LC_ALL, "RU");
+	srand(time(nullptr));
+	int A[4][4]; int B[4];
+
+	for (int i = 0; i < 4; i++)
+	{
+		for (int j = 0; j < 4; j++)
+		{
+			cin >> A[i][j];
+		}
+	}
+	cout << endl;
+	for (int i = 0; i < 4; i++)
+	{
+		for (int j = 0; j < 4; j++)
+		{
+			cout << A[i][j] << setw(30);
+		}
+	}
+	for (int i = 0; i < 4; i++)
+	{
+		if (A[i][0] < 0)
+		{
+			for (int j = 0; j < 2; j++)
+			{
+				swap(A[i][j], A[i][3 - j]);
+			}
+		}
+	}
+	cout << endl << "Вектор из первого столбца: ";
+	for (int i = 0; i < 4; i++)
+	{
+		B[i] = A[i][0];
+		cout << B[i] << " ";
+	}
+	cout << endl;
+	for (int i = 0; i < 4; i++)
+	{
+		for (int j = 0; j < 4; j++)
+		{
+			cout << A[i][j] << setw(30);
+		}
+	}
+	return 0;
+}
+28)	Дана матрица А(5, 5).Найти 10 максимальных элементов и переписать их в другой массив в обратном порядке.{1, 5, 0, 0, 0, 2} = > {13, 10, 7}
+
+#include <iostream>
+#include <ctime>
+#include <time.h>
+
+using namespace std;
+
+int main()
+{
+	const int i = 5, s = 10;
+	int A[i][i], B[s];
+	srand(time(nullptr));
+	rand();
+	for (int x = 0; x < i; x++)
+	{
+		for (int y = 0; y < i; y++)
+		{
+			A[x][y] = rand() % 20 + 1;
+			cout << A[x][y] << '\t';
+		}
+		cout << endl;
+	}
+	cout << endl;
+
+	int t;
+	for (int x = 0; x < i; x++)
+	{
+		for (int y = 0; y < i; y++)
+		{
+			if (A[x][y] > B[0])
+			{
+				B[0] = A[x][y];
+				for (int z = 1; z < s; z++)
+				{
+					if (B[z - 1] > B[z])
+					{
+						t = B[z - 1];
+						B[z - 1] = B[z];
+						B[z] = t;
+					}
+				}
+			}
+		}
+	}
+
+	for (int x = 0; x < s; x++)
+		cout << B[x] << ' ';
+	cout << endl;
+
+	return 0;
+}
+
+29)	Дана матрица А(6, 6).Определить является ли она симметричной относительно главной диагонали.Если  да, то все элементы этой диагонали заменить нулями.
+
+#include <iostream>
+#include <ctime>
+#include <time.h>
+
+using namespace std;
+
+int main()
+{
+
+	setlocale(LC_ALL, "ru");
+	int N = 6, M = 6, k;
+
+	int mass[6][6];
+
+	srand(time(nullptr));
+	for (int i = 0; i < N; i++)
+	{
+		for (int j = 0; j < M; j++)
+		{
+			mass[i][j] = rand() % 10;
+			cout << mass[i][j] << "\t";
+		}
+		cout << endl;
+
+	}
+
+	k = 0;
+	for (int j = 0; j < N - 1; j++)
+	{
+		for (int i = j + 1; i < N; i++)
+		{
+			if (mass[i][j] == mass[j][i])
+			{
+				k++;
+			}
+		}
+	}
+	if (k == (pow(N, 2) - N) / 2)
+	{
+		cout << "Матрица симметрична" << endl;
+		for (int i = 0; i < N; i++)
+		{
+			mass[i][i] = 0;
+			for (int j = 0; j < N; j++)
+			{
+				cout << mass[i][j] << " ";
+			}
+			cout << endl;
+		}
+	}
+	else
+	{
+		cout << "Матрица не симметрична" << endl;
+	}
+	return 0;
+
+
+}
+30)	В матрице А(8, 8) найти столбец содержащий  минимальный элемент.Умножить элементы данного  столбца  на  максимальный элемент.
+
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+int main()
+{
+	setlocale(LC_ALL, "ru");
+	int N, M;
+	cout << "Введите количество строк массива: ";
+	cin >> N;
+	cout << "Введите количество столбцов массива: ";
+	cin >> M;
+	int mass[100][100];
+	srand(time(nullptr));
+	for (int i = 0; i < N; i++)
+	{
+		for (int j = 0; j < M; j++)
+		{
+			mass[i][j] = rand() % 100;
+			cout << mass[i][j] << "\t";
+		}
+		cout << endl;
+	}
+	int minelement = mass[0][0];
+	int mincolumn = 0;
+	for (int j = 0; j < M; j++)
+	{
+		for (int i = 0; i < N; i++)
+		{
+			if (mass[i][j] < minelement)
+			{
+				minelement = mass[i][j];
+				mincolumn = j;
+			}
+		}
+	}
+	int maxelement = mass[0][0];
+	int maxcolumn = 0;
+	for (int j = 0; j < M; j++)
+	{
+		for (int i = 0; i < N; i++)
+		{
+			if (mass[i][j] > maxelement)
+			{
+				maxelement = mass[i][j];
+			}
+		}
+	}
+	cout << "Столбец с минимальным значением = " << mincolumn << endl;
+	cout << "Минимальный элемент = " << minelement << endl;
+	cout << "Максимальный элемент = " << maxelement << endl;
+
+	cout << "отредактированная матрица" << endl;
+	for (int i = 0; i < N; i++)
+	{
+		mass[i][mincolumn] = mass[i][mincolumn] * maxelement;
+	}
+
+	for (int i = 0; i < N; i++)
+	{
+		for (int j = 0; j < M; j++)
+		{
+			cout << mass[i][j] << "\t";
+		}
+		cout << endl;
+	}
+	return 0;
+}
+31)	Дано: X(M), Y(M).Вектор, имеющий наибольшее количество различных компонент преобразовать по правилу : все компоненты > = 10 заменить на 1.
+
+
+int col(int* Z, int M) {
+	for (int i = 0; i < M; i++)
+		for (int j = 0; j < M - i - 1; j++) {
+			if (Z[j] > Z[j + 1]) swap(Z[j], Z[j + 1]);
+		}
+	int c = 1;
+	for (int i = 0; i < M - 1; i++)
+	{
+		if (Z[i] != Z[i + 1]) c++;
+	}
+
+	return c;
+}
+
+Int M;
+cin >> M;
+int* X = new int[M];
+for (int i = 0; i < M; i++) {
+	cin >> X[i];
+}
+if (col(X) > col(Y)) {
+	for (int i = 0; i < M; i++) {
+		if (X[i] >= 10) X[i] = 1;
+	}
+}
+else {
+	for (int i = 0; i < M; i++) {
+		if (Y[i] >= 10) Y[i] = 1;
+	}
+
+}
+int* Y = new int[M];
+
+32)	Дано: X(M), Y(N).Вектор, имеющий наибольшее количество различных компонент преобразовать по правилу : все элементы >= 10 заменить на 1.
+
+#include <iostream>
+#include <vector>
+using namespace std;
+int main()
+{
+	setlocale(LC_ALL, "RU");
+	int n, m;
+	cout << "Введите размер вектора X:" << endl;
+	cin >> n;
+	cout << "Введите элементы вектора: " << endl;
+	vector <int> x(n);
+	for (int i = 0; i < n; i++)
+		cin >> x[i];
+	cout << "Введите размер вектора Y:" << endl;
+	cin >> m;
+	cout << "Введите элементы вектора: " << endl;
+	vector <int> y(m);
+	for (int i = 0; i < m; i++)
+		cin >> y[i];
+	if (x.size() > y.size()) {
+		for (int i = 0; i < x.size(); i++)
+			if (x[i] >= 10)
+				x[i] = 1;
+	}
+	else if (x.size() < y.size()) {
+		for (int j = 0; j < y.size(); j++)
+			if (y[j] >= 10)
+				y[j] = 1;
+	}
+	cout << "Результат вектора X:" << endl;
+	for (int i = 0; i < x.size(); i++)
+		cout << x[i] << " ";
+	cout << endl;
+	cout << "Результат вектора Y:" << endl;
+	for (int i = 0; i < y.size(); i++)
+		cout << y[i] << " ";
+}
+
+33)	Задан массив целых чисел X(N).Шесть наибольших чисел этого массива переписать в массив Z.Удалить из массива Z все чётные числа.
+
+#include <iostream>
+
+using namespace std;
+int main()
+{
+	int x[100] = {}, z[6] = {};
+	int n, m, t;
+
+	cout << "n=";
+	cin >> n;
+	for (int i = 0; i < n; i++)
+		cin >> x[i];
+	for (int i = 0; i < n - 1; i++)
+		for (int j = 0; j < n - i - 1; j++)
+			if (x[j] < x[j + 1])
+			{
+				t = x[j];
+				x[j] = x[j + 1];
+				x[j + 1] = t;
+			}
+	for (int i = 0; i < 6; i++)
+	{
+		z[i] = x[i];
+	}
+	cout << "New array Z.1: " << endl;
+	for (int i = 0; i < 6; i++)
+		cout << z[i] << " ";
+	cout << endl;
+
+	int ns = 0;
+	for (int i = 0; i < 6; i++)
+		if (z[i] % 2 != 0)
+			z[ns++] = z[i];
+
+	cout << "New array Z.2: " << endl;
+	for (int i = 0; i < ns; i++)
+		cout << z[i] << " ";
+}
+34)	Задан массив целых положительных чисел X(n).Все числа, в которых нет цифры ноль, а их длина не менее трёх цифр переписать в массив Z.
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+int main()
+{
+	int x[100] = {}, z[100] = {};
+	int n, m = 0;
+	cout << "n=";
+	cin >> n;
+	for (int i = 0; i < n; i++)
+		cin >> x[i];
+	for (int i = 0; i < n; i++)
+	{
+		int k = 0;
+		string c = to_string(x[i]);
+		if (c.find("0") != -1)
+			k++;
+		int num = stoi(c);
+		x[i] = num;
+		if (k == 0 and x[i] >= 100)
+		{
+			m++;
+			z[i] = x[i];
+		}
+	}
+	cout << "New array Z: " << endl;
+	for (int i = 0; i < m; i++)
+		cout << z[i] << " ";
+}
+
+35)	Задан массив целых положительных чисел в двоичной системе X(n).Из массива X сформировать массив десятеричных чисел Z.
+
+#include <iostream>
+#include <cmath>
+#include <string>
+using namespace std;
+int main() {
+	int x[100] = {}, z[100] = {};
+	int n;
+	string s = "";
+	cout << "n=";
+	cin >> n;
+	for (int i = 0; i < n; i++)
+		cin >> x[i];
+	for (int i = 0; i < n; i++) {
+		while (x[i] > 0) {
+			s += to_string((x[i] % 2) * pow(2, i));
+			x[i] /= 2;
+		}
+		int num = stoi(s);
+		x[i] = num;
+		z[i] = x[i];
+	}
+	cout << "New array Z: " << endl;
+	for (int i = 0; i < n; i++)
+		cout << z[i] << " ";
+}*/
+
+
